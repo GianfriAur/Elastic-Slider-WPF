@@ -1,0 +1,114 @@
+﻿<Window x:Name="MW" x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Elastic Slidebar WPF" Height="450" Width="800"  PreviewMouseDown="Window_PreviewMouseDown" PreviewMouseUp="Window_PreviewMouseUp" PreviewMouseMove="Window_PreviewMouseMove">
+    
+    <Grid Background="#B1000000">
+        <Grid  Height="300" Width="400" Background="White" ClipToBounds="true">
+            <Grid x:Name="LeftSlide" Width="60" Height="300" HorizontalAlignment="Left" Background="White"  PreviewMouseDown="LeftSlide_PreviewMouseDown" >
+                <Grid x:Name="LeftSlideContent" Visibility="Collapsed">
+                    <Grid x:Name="Blink2" Width="50" Height="150" HorizontalAlignment="Right" Margin="0,0,25,0">
+
+                        <Path  Fill="DarkGray" Height="30" Stretch="Uniform"  Width="30" Data="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+			c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
+			c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
+			c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z" VerticalAlignment="Top" >
+                            <Path.LayoutTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Path.LayoutTransform>
+                        </Path>
+                        <Path  Fill="DarkGray" Height="30" Stretch="Uniform"  Width="30" Data="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+			c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
+			c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
+			c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z" VerticalAlignment="Bottom" >
+                            <Path.LayoutTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Path.LayoutTransform>
+                        </Path>
+
+                        <Grid.Triggers>
+                            <!-- Animates the rectangle's opacity. -->
+                            <EventTrigger RoutedEvent="Grid.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                    Storyboard.TargetName="Blink2" 
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="1.0" To="0.0" Duration="0:0:1" 
+                                    AutoReverse="True" RepeatBehavior="Forever" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Grid.Triggers>
+                    </Grid>
+                    <Grid  Width="50" Height="150" HorizontalAlignment="Right" Margin="0,0,25,0">
+                        <TextBlock Text="Swipe Left" HorizontalAlignment="Right" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="19" Foreground="DarkGray" TextAlignment="Right"/>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+
+            <Grid x:Name="RigthSlide" Height="300" Width="340" Background="#FF6D7ADA" Margin="60,0,0,0" PreviewMouseDown="LeftSlide_PreviewMouseDown">
+                <Grid x:Name="RigthSlideContent">
+                    <Grid x:Name="Blink" Width="50" Height="150" HorizontalAlignment="Left" Margin="25,0,0,0">
+
+                        <Path  Fill="LightGray" Height="30" Stretch="Uniform"  Width="30" Data="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+			c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
+			c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
+			c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z" VerticalAlignment="Top" />
+                        <Path  Fill="LightGray" Height="30" Stretch="Uniform"  Width="30" Data="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+			c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
+			c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
+			c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z" VerticalAlignment="Bottom" />
+
+                        <Grid.Triggers>
+                            <!-- Animates the rectangle's opacity. -->
+                            <EventTrigger RoutedEvent="Grid.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                    Storyboard.TargetName="Blink" 
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="1.0" To="0.0" Duration="0:0:1" 
+                                    AutoReverse="True" RepeatBehavior="Forever" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Grid.Triggers>
+
+                    </Grid>
+                    <Grid  Width="50" Height="150" HorizontalAlignment="Left" Margin="25,0,0,0">
+                        <TextBlock Text="Swipe Right" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="19" Foreground="LightGray"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid x:Name="BubleSlide" Width="400"  Height="300" Margin="-140,0,0,0" HorizontalAlignment="Left">
+                <Ellipse x:Name="LeftElips" Width="0" HorizontalAlignment="Center" Fill="#FF6D7ADA">
+                    <Ellipse.Clip>
+                        <RectangleGeometry x:Name="LeftElipsGeo" Rect="0,0,100,300"/>
+                    </Ellipse.Clip>
+                </Ellipse>
+                <Ellipse x:Name="RightElips" Width="0" HorizontalAlignment="Center" Fill="White">
+                    <Ellipse.Clip>
+                        <RectangleGeometry x:Name="RightElipsGeo" Rect="0,0,0,300"/>
+                    </Ellipse.Clip>
+                </Ellipse>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>
