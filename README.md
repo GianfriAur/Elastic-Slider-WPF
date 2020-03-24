@@ -3,7 +3,7 @@
 
 #### no optimization has been made or instantiated in a usercontroller
 
-#DEMO IMAGE
+# DEMO IMAGE
 
 ![Elastic-Slidebar-WPF](./resource/demo.gif "DEMO Elastic Slidebar WPF")
 
